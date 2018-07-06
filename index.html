@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+
+	<!-- google jquery cdn -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- /google jquery cdn -->
+
+	<!-- w3schools w3.css stylesheet link -->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- /w3schools w3.css stylesheet link -->
+
+	<!-- fontawesome cdn -->
+	<!-- /fontawesome cdn -->
+
+</head>
+<style type="text/css">
+body
+{
+	background-color: #f49e42;
+}
+
+#homeImg {
+    position: relative;
+    width: 400px;
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#homeImg img:first-child
+{
+	width: 50%;
+}
+#homeImg img:last-child
+{
+	position: absolute;
+	left: 0;
+	top: 46%;
+	width: 100%;
+    -webkit-animation: homeImgAnimation 2s infinite;
+    animation: homeImgAnimation 2s infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+</style>
+
+<body>
+
+<div id="homeImg" class="w3-container bounceInDown animated">
+<img src="./images/drawing.svg">
+<img src="./images/homeImg3_2.svg">
+</div>
+
+<!-- animation style -->
+<style type="text/css">
+.bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@keyframes bounceInDown
+{
+0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+}	
+60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+}
+75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+}
+90% {
+    -webkit-transform: translate3d(0, 5px, 0)
+ ;   transform: translate3d(0, 5px, 0);
+}
+100% {
+    -webkit-transform: none;
+    transform: none;
+}
+}
+@keyframes homeImgAnimation
+{
+0% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(5deg);
+}
+50% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-5deg);
+}
+100% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(5deg);
+}
+}
+</style>
+<!-- /animation style -->
+
+</body>
+</html>
