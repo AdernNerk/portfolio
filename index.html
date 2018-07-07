@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Portfolio</title>
+    <title>Portfolio</title>
 
-	<!-- google jquery cdn -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!-- /google jquery cdn -->
+    <!-- view port and encoding type-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- /viewport and encoding type -->
 
-	<!-- w3schools w3.css stylesheet link -->
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<!-- /w3schools w3.css stylesheet link -->
+    <!-- google jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- /google jquery cdn -->
 
-	<!-- fontawesome cdn -->
-	<!-- /fontawesome cdn -->
+    <!-- w3schools w3.css stylesheet link -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- /w3schools w3.css stylesheet link -->
+
+    <!-- fontawesome cdn -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- /fontawesome cdn -->
 
 </head>
 <style type="text/css">
+
+@import url('https://fonts.googleapis.com/css?family=Gaegu');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
 body
 {
-	background-color: #f49e42;
+    font-family: 'Gaegu', cursive;
 }
-
+.hello
+{
+    letter-spacing: 3px;
+    font-size: 50px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.name
+{
+    font-family: 'Gaegu', cursive;
+    letter-spacing: 3px;
+    font-size: 30px;
+    text-align: center;
+}
 #homeImg {
     position: relative;
     width: 400px;
@@ -33,27 +58,51 @@ body
 }
 #homeImg img:first-child
 {
-	width: 50%;
+    width: 50%;
 }
 #homeImg img:last-child
 {
-	position: absolute;
-	left: 0;
-	top: 46%;
-	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 46%;
+    width: 100%;
     -webkit-animation: homeImgAnimation 2s infinite;
     animation: homeImgAnimation 2s infinite;
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
 }
+.down
+{
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
+}
 </style>
 
 <body>
 
+<p class="hello bounceInDown animated">
+H.E.L.L.O
+</p>
 <div id="homeImg" class="w3-container bounceInDown animated">
-<img src="./images/drawing.svg">
+<img src="./images/drawing_3.svg">
 <img src="./images/homeImg3_2.svg">
 </div>
+
+<div class="w3-container name bounceInDown animated" style="">
+    <h2 class="w3-center">
+    RISHABH RANA
+    </h2>
+    <h4 class="w3-center">
+    CODING&nbsp;·&nbsp;DESIGN&nbsp;·&nbsp;DRAWING
+    </h4>
+    <br>
+    <h3 class="w3-center">
+        <i class="down fa fa-angle-down"></i>
+    </h3>
+</div>
+
 
 <!-- animation style -->
 <style type="text/css">
@@ -77,7 +126,7 @@ body
     opacity: 0;
     -webkit-transform: translate3d(0, -3000px, 0);
     transform: translate3d(0, -3000px, 0);
-}	
+}   
 60% {
     opacity: 1;
     -webkit-transform: translate3d(0, 25px, 0);
