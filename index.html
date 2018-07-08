@@ -49,6 +49,7 @@ body
 
 <!-- nav bar -->
 <style type="text/css">
+/*nav bar outer container*/
 .nav
 {
     position: fixed;
@@ -58,13 +59,14 @@ body
     background: rgba(0,0,0,0.2);
     z-index:999;
     font-size: 25px;
-    height:80px;
+    height: 70px;
     transition: 0.2s;
     -moz-transition: 0.2s;
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
 
 }
+/*nav bar logo*/
 .nav .logo
 {
     float:left;
@@ -79,11 +81,12 @@ body
     height: 50px;
     cursor:pointer;
 }
-.nav .links
+/*nav on desktop*/
+.nav .big-links
 {
     float: right;
 }
-.nav .links .part
+.nav .big-links .part
 {
     float:right;
     text-align: center;
@@ -91,41 +94,120 @@ body
     margin-top:15px;
     margin-right: 10px;
 }
-.nav .links .part:hover
+.nav .big-links .part:hover
 {
     border-bottom: 2px solid #fff;
     border-radius: 2px;
 }
+/*the non ghost css for nav*/
 .active-nav
 {
     background: #202020;
-    height: 70px;
     transition: 0.2s;
     -moz-transition: 0.2s;
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
 
 }
+/*toggle menu icon on mobile nav*/
+.container {
+    float: right;
+    text-align: center;
+    margin-top: 15px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+/*nav on phone*/
+.small-links .part
+{
+    width:100%;
+    text-align: center;
+    height: 60px;
+}
+
+@media screen and ( min-width: 600px ) 
+{
+.nav .small-links
+{
+    display: none;
+}
+.nav .big-links
+{
+    display: block;
+}
+.nav .small-links-opener
+{
+    display: none;
+}
+}
+@media screen and ( max-width: 600px ) 
+{
+.nav .small-links
+{
+    display: block;
+}
+.nav .big-links
+{
+    display: none;
+}
+.nav .small-links-opener
+{
+    display: block;
+}
+}
+
 </style>
 <div class="w3-container nav">
-    <div class="logo">
-        <img src="./images/drawing_3.svg" id="topFunction">
+    <div class="w3-container">
+        <div class="logo">
+            <img src="./images/drawing_3.svg" id="topFunction">
+        </div>
+        <div class="big-links">
+            <div class="part" style="width: 95px;">Resume</div>
+            <div class="part" style="width: 80px;">Work</div>
+            <div class="part" style="width: 80px;">About</div>
+        </div>
+        <div class="container small-links-opener" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
     </div>
-    <div class="links">
-        <div class="part" style="width: 120px;">Resume</div>
-        <div class="part" style="width: 100px;">Work</div>
-        <div class="part" style="width: 100px;">About</div>
+    <div class="small-links">
+        <div class="part">Resume</div>
+        <div class="part">Work</div>
+        <div class="part">About</div>
     </div>
 </div>
 <script type="text/javascript">
 //scrolling effect by adding and removing css classes
 $(window).scroll(function () {
     if ($(window).scrollTop() > 100) {
-        $(".nav").addClass('bounceInDown animated');
+        $(".nav").addClass('bounceInDown animated-fast');
         $(".nav").addClass('active-nav');
     }
     else {
-        $(".nav").removeClass('bounceInDown animated');
+        $(".nav").removeClass('bounceInDown animated-fast');
         $(".nav").removeClass('active-nav');
     }
 });
@@ -138,6 +220,21 @@ $("#topFunction").click(function(){
         behavior:'smooth'
     })
 });
+
+//toggle open and close menu sign on mobile nav
+function myFunction(x) {
+    x.classList.toggle("change");
+    if($(".nav").css("height")=="70px")
+    {
+        $(".small-links").slideDown();
+        $(".nav").css("height","auto");
+    }
+    else
+    {
+        $(".small-links").fadeOut();
+            $(".nav").css("height","70px");
+    }
+}
 </script>
 <!-- /nav bar -->
 
@@ -288,11 +385,23 @@ $("#topFunction").click(function(){
 <br>
 <br>
 <br>
+
+<!-- footer -->
+<div class="w3-container footer">
+
+<!-- /footer -->
+
 <!-- animation style -->
 <style type="text/css">
 .bounceInDown {
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
+}
+.animated-fast {
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 .animated {
     -webkit-animation-duration: 1s;
