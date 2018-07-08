@@ -20,35 +20,141 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- /fontawesome cdn -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'> 
 </head>
 <style type="text/css">
 
+/*
+funcky cartoonist - font-family: 'Gaegu', cursive;
+*/
 @import url('https://fonts.googleapis.com/css?family=Gaegu');
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+/*
+main sirill - font-family: 'Poiret One', cursive;
+main normal - font-family: 'Quattrocento Sans', sans-serif;
+cursive - font-family: 'Satisfy', cursive;
+plain bold headers - font-family: 'Concert One', cursive;
+*/
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Poiret+One|Quattrocento+Sans|Satisfy');
 
 body
 {
-    font-family: 'Gaegu', cursive;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
-.hello
+</style>
+
+<body>
+
+<!-- nav bar -->
+<style type="text/css">
+.nav
 {
-    letter-spacing: 3px;
-    font-size: 50px;
-    padding: 0px;
-    margin: 0px;
-    text-align: center;
-    text-transform: uppercase;
+    position: fixed;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    z-index:999;
+    font-size: 25px;
+    height:80px;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+
 }
-.name
+.nav .logo
 {
-    font-family: 'Gaegu', cursive;
-    letter-spacing: 3px;
-    font-size: 30px;
+    float:left;
+    width:80px;
     text-align: center;
+}
+.nav .logo img
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    cursor:pointer;
+}
+.nav .links
+{
+    float: right;
+}
+.nav .links .part
+{
+    float:right;
+    text-align: center;
+    cursor: pointer;
+    margin-top:15px;
+    margin-right: 10px;
+}
+.nav .links .part:hover
+{
+    border-bottom: 2px solid #fff;
+    border-radius: 2px;
+}
+.active-nav
+{
+    background: #202020;
+    height: 70px;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+
+}
+</style>
+<div class="w3-container nav">
+    <div class="logo">
+        <img src="./images/drawing_3.svg" id="topFunction">
+    </div>
+    <div class="links">
+        <div class="part" style="width: 120px;">Resume</div>
+        <div class="part" style="width: 100px;">Work</div>
+        <div class="part" style="width: 100px;">About</div>
+    </div>
+</div>
+<script type="text/javascript">
+//scrolling effect by adding and removing css classes
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 100) {
+        $(".nav").addClass('bounceInDown animated');
+        $(".nav").addClass('active-nav');
+    }
+    else {
+        $(".nav").removeClass('bounceInDown animated');
+        $(".nav").removeClass('active-nav');
+    }
+});
+
+// When the user clicks on the button, scroll to the top of the document
+$("#topFunction").click(function(){
+    window.scroll({
+        top:0,
+        left:0,
+        behavior:'smooth'
+    })
+});
+</script>
+<!-- /nav bar -->
+
+<!-- top container -->
+<style type="text/css">
+.first
+{
+    background-color: #f49e42;
+    padding:0px;
+    padding-top: 70px;
+    overflow: hidden;
+    margin:0px;
 }
 #homeImg {
     position: relative;
-    width: 400px;
+    width:100%;
+    max-width: 400px;
     display: block;
     padding-top: 40px;
     padding-bottom: 20px;
@@ -66,44 +172,122 @@ body
     left: 0;
     top: 46%;
     width: 100%;
+    padding-left:20px;
+    padding-right:20px;
     -webkit-animation: homeImgAnimation 2s infinite;
     animation: homeImgAnimation 2s infinite;
     -webkit-animation-timing-function: ease-in-out;
     animation-timing-function: ease-in-out;
 }
+.hello
+{
+    letter-spacing: 5px;
+    font-size: 55px;
+    padding: 0px;
+    margin: 0px;
+    color: #202020;
+    font-family: 'Concert One', cursive;
+    text-align: center;
+    text-transform: uppercase;
+}
+.name
+{
+    letter-spacing: 3px;
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+.skill
+{
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 5px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
 .down
 {
-    font-family: 'Nunito', sans-serif;
     color: #fff;
+    width:50px;
+    height:50px;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.down:hover
+{
+    font-size: 45px;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 </style>
-
-<body>
-
-<p class="hello bounceInDown animated">
-H.E.L.L.O
-</p>
-<div id="homeImg" class="w3-container bounceInDown animated">
-<img src="./images/drawing_3.svg">
-<img src="./images/homeImg3_2.svg">
-</div>
-
-<div class="w3-container name bounceInDown animated" style="">
-    <h2 class="w3-center">
-    RISHABH RANA
-    </h2>
-    <h4 class="w3-center">
-    CODING&nbsp;·&nbsp;DESIGN&nbsp;·&nbsp;DRAWING
-    </h4>
+<div class="w3-container first bounceInDown animated">
+    <div class="hello w3-container">
+        H·E·L·L·O
+    </div>
     <br>
-    <h3 class="w3-center">
-        <i class="down fa fa-angle-down"></i>
-    </h3>
+    <div id="homeImg" class="w3-container bounceInDown animated">
+        <img src="./images/drawing_3.svg">
+        <img src="./images/homeImg3_2.svg">
+    </div>
+    <br>
+    <div class="w3-container w3-center">
+        <div class="name">
+            RISHABH RANA
+        </div>
+        <div class="skill">
+            CODING&nbsp;·&nbsp;DESIGN&nbsp;·&nbsp;DRAWING
+        </div>
+        <div class="down">
+            <i class="fa fa-angle-down"></i>
+        </div>
+    </div>
+    <br>
 </div>
+<script type="text/javascript">
+    $(".down").hover(function(){
+        $(".down").html('<i class="fa fa-angle-double-down"></i>');
+    });
+    $(".down").mouseleave(function(){
+        $(".down").html('<i class="fa fa-angle-down"></i>');
+    });
+</script>
+<!-- /top container -->
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <!-- animation style -->
 <style type="text/css">
 .bounceInDown {
@@ -145,6 +329,7 @@ H.E.L.L.O
     transform: none;
 }
 }
+
 @keyframes homeImgAnimation
 {
 0% {
