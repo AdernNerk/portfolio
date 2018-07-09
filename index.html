@@ -12,6 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- /google jquery cdn -->
 
+    <!-- viewport js -->
+    <script type="text/javascript" src="./script/viewport.js"></script>
+    <!-- /viewport js -->
+
     <!-- w3schools w3.css stylesheet link -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- /w3schools w3.css stylesheet link -->
@@ -437,7 +441,7 @@ background-color: #7FDBFF;
 }
 .count-bar
 {
-height: 100%;
+    height: 100%;
     width: 0px;
     position: relative;
     -moz-border-radius: 3px;
@@ -549,11 +553,13 @@ height: 100%;
     </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){
-    $('.skillbar').each(function(){
-        $(this).find('.count-bar').animate({
-            width:$(this).attr('data-percent')
-        },3000);
+$('.count-bar').on('inview',function(){
+    $(document).ready(function(){
+        $('.skillbar').each(function(){
+            $(this).find('.count-bar').animate({
+                width:$(this).attr('data-percent')
+            },3000);
+        });
     });
 });
 </script>
