@@ -307,6 +307,15 @@ function myFunction(x) {
     padding-top: 20px;
     padding-bottom: 10px;
 }
+@media screen and ( max-width: 600px ) 
+{
+.skill
+{
+    letter-spacing: 0.5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+}
 .down
 {
     color: #fff;
@@ -378,24 +387,23 @@ function myFunction(x) {
 
 <!-- skill bar chart -->
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Gaegu');
-
-h2
+.skillbar-container
 {
-  font-family: 'Gaegu', cursive;
-  text-align:center;
-  font-size:28px;
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
 }
 .skillbar
 {
   font-family: 'Gaegu', cursive;
   color:#fff;
   width: 100%;
+  border: 2px solid #000;
     height: 30px;
   position: relative;
     margin-bottom: 15px;
-  border-radius: 3px;
- background: url('http://www.thethemelab.com/thethemelab/free/10-animated-skill-bars/images/stripe.png') repeat scroll 0 0 #e0e0e0;
+  border-radius: 4px;
+ background: url('./images/stripe.png') repeat scroll 0 0 #e0e0e0;
   overflow:hidden;
 }
 .symbol
@@ -444,9 +452,6 @@ background-color: #7FDBFF;
     height: 100%;
     width: 0px;
     position: relative;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
 }
 .title {
     font-size: 18px;
@@ -464,9 +469,11 @@ background-color: #7FDBFF;
 </style>
 <div class="w3-container">
     <div class="w3-half">
-
+        <img src="./images/skills_1.svg" style="width: 100%;height: auto;display: none;" id="skillgraph_1">
     </div>
-    <div class="w3-third w3-padding">
+    <div class="w3-half">
+    <div class="w3-container skillbar-container">
+        <p style="font-size: 25px">Coding - </p>
         <div class="skillbar" data-percent="80%">
           <div class="count-bar color-1">
             <div class="title">
@@ -518,11 +525,10 @@ background-color: #7FDBFF;
           </div>
         </div>
 
+        <p style="font-size: 25px">Design - </p>
         <div class="skillbar" data-percent="65%">
           <div class="count-bar color-6">
-            <div class="title"><div class="symbol">
-            &#40;&#9728;&#41;
-          </div>After Effects</div>
+            <div class="title">&nbsp;&nbsp;After Effects</div>
             <div class="count">      
             </div>
           </div>
@@ -531,9 +537,7 @@ background-color: #7FDBFF;
 
         <div class="skillbar" data-percent="45%">
           <div class="count-bar color-7">
-            <div class="title"><div class="symbol">
-            &#40;&#9761;&#41;
-          </div>Photoshop</div>
+            <div class="title">&nbsp;&nbsp;Photoshop</div>
             <div class="count">
             </div>
           </div>
@@ -542,14 +546,13 @@ background-color: #7FDBFF;
 
         <div class="skillbar" data-percent="75%">
           <div class="count-bar color-8">
-            <div class="title"><div class="symbol">
-            &#40;&#9741;&#41;
-          </div>Illustrator</div>
+            <div class="title">&nbsp;&nbsp;Illustrator</div>
             <div class="count">  
             </div>
           </div>
         </div>
 
+    </div>
     </div>
 </div>
 <script type="text/javascript">
@@ -560,6 +563,7 @@ $('.count-bar').on('inview',function(){
                 width:$(this).attr('data-percent')
             },3000);
         });
+        $("#skillgraph_1").fadeIn(1500);
     });
 });
 </script>
