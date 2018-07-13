@@ -206,7 +206,7 @@ body
     <div class="small-links">
         <div class="part">Resume</div>
         <a href="#work" style="color: #fff"><div class="part">Work</div></a>
-        <div class="part">About</div>
+        <a href="#about" style="color: #fff"><div class="part">About</div></a>
     </div>
 </div>
 <script type="text/javascript">
@@ -368,17 +368,17 @@ function myFunction(x) {
             CODING&nbsp;·&nbsp;DESIGN&nbsp;·&nbsp;DRAWING
         </div>
         <div class="down">
-            <a href="#work" style="color: #fff"><div><i class="fa fa-angle-down"></i></div></a>
+            <a href="#work" style="color: #fff"><i class="fa fa-angle-down"></i></a>
         </div>
     </div>
     <br>
 </div>
 <script type="text/javascript">
     $(".down").hover(function(){
-        $(".down").html('<i class="fa fa-angle-double-down"></i>');
+        $(".down").html('<a href="#work" style="color: #fff"><i class="fa fa-angle-double-down"></i></a>');
     });
     $(".down").mouseleave(function(){
-        $(".down").html('<i class="fa fa-angle-down"></i>');
+        $(".down").html('<a href="#work" style="color: #fff"><i class="fa fa-angle-down"></i></a>');
     });
 if($(document).width()<1090)
 {
