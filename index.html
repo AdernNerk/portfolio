@@ -190,7 +190,7 @@ body
 <div class="w3-container nav">
     <div class="w3-container">
         <div class="logo">
-            <img src="./images/drawing_3.svg" id="topFunction">
+            <img src="./images/drawing_3.svg" id="topFunction" onclick="closeFunction(this)">
         </div>
         <div class="big-links">
             <div class="part" style="width: 95px;">Resume</div>
@@ -429,6 +429,19 @@ else
 {
     font-size: 18px;
 }
+.linking
+{
+    width:100%;
+    max-width:300px;
+    margin:auto;
+    margin:5px;
+}
+.linking-outer
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 </style>
 <div class="w3-container work w3-padding-64">
 <div id="work"></div>
@@ -437,36 +450,33 @@ else
 <br>
 <br>
 <!-- work -->
-<div class="w3-third w3-padding-topw3-container third-outer">
+<div class="w3-third w3-padding-top w3-container third-outer w3-padding-bottom">
         <img src="./images/339378-PAYA1Z-901.svg" alt="Avatar" class="image" style="width:100%">
 </div>
-<div class="w3-rest linking w3-padding">
-    <div class="w3-margin-bottom">
+<div class="w3-rest linking-outer w3-padding">
+
+    <div class="w3-margin-bottom linking w3-round w3-border w3-padding ">
         <div class="big">Osho Madhushala</div>
         <div class="smal">Meditation Center, Narela</div>
         <div class="li">
-            <a href="https://oshomadhushala.com/"><i class="fa fa-link w3-margin-right" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/oshomadhushala.narela"><i class="fa fa-facebook w3-margin-right" aria-hidden="true"></i></a>
+            <a href="https://oshomadhushala.com/" target="_blank"><i class="fa fa-link w3-margin-right" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/oshomadhushala.narela" target="_blank"><i class="fa fa-facebook w3-margin-right" aria-hidden="true"></i></a>
             <i class="fa fa-twitter w3-margin-right" aria-hidden="true"></i>
             <i class="fa fa-youtube-play w3-margin-right" aria-hidden="true"></i>
         </div>
     </div>
-    <div class="w3-margin-bottom">
-        ------X------X------
-    </div>
-    <div class="w3-margin-bottom">
-        <div class="big">Osho Madhushala</div>
-        <div class="smal">Meditation Center, Narela</div>
+
+    <div class="w3-margin-bottom linking w3-border w3-round w3-padding">
+        <div class="big">Personal Website</div>
+        <div class="smal">Rishabh Rana, Portfolio</div>
         <div class="li">
-            <a href="https://oshomadhushala.com/"><i class="fa fa-link w3-margin-right" aria-hidden="true"></i></a>
+            <a href="https://adernnerk.github.io/portfolio" target="_blank"><i class="fa fa-link w3-margin-right" aria-hidden="true"></i></a>
             <i class="fa fa-facebook w3-margin-right" aria-hidden="true"></i>
             <i class="fa fa-twitter w3-margin-right" aria-hidden="true"></i>
             <i class="fa fa-youtube-play w3-margin-right" aria-hidden="true"></i>
         </div>
     </div>
-    <div class="w3-margin-bottom">
-        ------X------X------
-    </div>
+
 </div>
 <!-- /work -->
 
@@ -505,9 +515,24 @@ else
         padding-right: 0px !important;
     }
 }
+.about-button
+{
+    width:180px;
+    height:40px;
+    padding-top: 5px;
+    margin: auto;
+    border-radius:50px;
+    text-align: center;
+    font-size: 22px;
+    border:2px solid #262626;
+    color: #fff;
+    background-color: #f15f44;
+}
 </style>
 <div class="w3-container w3-padding-64 padding_10">
     <div id="about"></div>
+<div class="about-button">About Me</div>
+<br><br>
     <div class="w3-container self-image w3-third">
         <br>
         <img src="./images/self.svg" style="width: 100%; height: auto;">
@@ -542,7 +567,7 @@ else
   font-family: 'Gaegu', cursive;
   color:#fff;
   width: 100%;
-  border: 2px solid #000;
+  border: 1px solid #000;
     height: 30px;
   position: relative;
     margin-bottom: 15px;
@@ -616,10 +641,10 @@ background-color: #FF4136;
 }
 </style>
 <div class="w3-container">
-    <div class="w3-half">
+    <div class="w3-half w3-center">
         <br>
         <br>
-        <img src="./images/skills_1.svg" style="width: 100%;height: auto;" id="skillgraph_1">
+        <img src="./images/skills_1.svg" style="width: 100%;height: auto;max-width: 500px;" id="skillgraph_1">
         <br>
         <br>
         <script type="text/javascript">
@@ -776,7 +801,7 @@ $('.count-bar').on('inview',function(){
         <img src="./images/twitter.svg"/>
         <img src="./images/whatsapp.svg"/>
         <img src="./images/codepen.svg"/>
-        <img src="./images/github.svg"/>
+        <a href="http://github.com/AdernNerk" target="_blank"><img src="./images/github.svg"/></a>
         <img src="./images/stackoverflow.svg"/>
     </div>
 </div>
