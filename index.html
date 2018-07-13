@@ -374,18 +374,20 @@ function myFunction(x) {
         <div class="skill">
             CODING&nbsp;·&nbsp;DESIGN&nbsp;·&nbsp;DRAWING
         </div>
-        <div class="down">
-            <i class="fa sfa-angle-down"></i>
-        </div>
+        <a href="#work" style="color: #fff">
+            <div class="down">
+                <i class="fa fa-angle-down"></i>
+            </div>
+        </a>
     </div>
     <br>
 </div>
 <script type="text/javascript">
 $(".down").hover(function(){
-    $(".down").html('<a href="#work" style="color: #fff"><i class="fa fa-angle-double-down"></i></a>');
+    $(".down").html('<i class="fa fa-angle-double-down"></i>');
 });
 $(".down").mouseleave(function(){
-    $(".down").html('<a href="#work" style="color: #fff"><i class="fa fa-angle-down"></i></a>');
+    $(".down").html('<i class="fa fa-angle-down"></i>');
 });
 if($(document).width()<1090)
 {
@@ -399,9 +401,6 @@ else
     $(".first").css("background-size","cover");
     $(".first").css("background-repeat","no-repeat");
 }
-$(".down").click(function(){
-
-});
 </script>
 <!-- /top container -->
 
