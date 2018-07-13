@@ -194,8 +194,8 @@ body
         </div>
         <div class="big-links">
             <div class="part" style="width: 95px;">Resume</div>
-            <div class="part" style="width: 80px;">Work</div>
-            <div class="part" style="width: 80px;">About</div>
+            <a href="#work" style="color: #fff"><div class="part" style="width: 80px;">Work</div></a>
+            <a href="#about" style="color: #fff"><div class="part" style="width: 80px;">About</div></a>
         </div>
         <div class="container small-links-opener" onclick="myFunction(this)">
             <div class="bar1"></div>
@@ -205,7 +205,7 @@ body
     </div>
     <div class="small-links">
         <div class="part">Resume</div>
-        <div class="part">Work</div>
+        <a href="#work" style="color: #fff"><div class="part">Work</div></a>
         <div class="part">About</div>
     </div>
 </div>
@@ -368,7 +368,7 @@ function myFunction(x) {
             CODING&nbsp;·&nbsp;DESIGN&nbsp;·&nbsp;DRAWING
         </div>
         <div class="down">
-            <i class="fa fa-angle-down"></i>
+            <a href="#work" style="color: #fff"><div><i class="fa fa-angle-down"></i></div></a>
         </div>
     </div>
     <br>
@@ -394,6 +394,79 @@ else
 }
 </script>
 <!-- /top container -->
+
+<!-- work -->
+<style type="text/css">
+.work
+{
+    text-align: center;
+}
+.work-button
+{
+    width:130px;
+    height:40px;
+    padding-top: 5px;
+    margin: auto;
+    border-radius:50px;
+    text-align: center;
+    font-size: 22px;
+    border:2px solid #262626;
+    color: #fff;
+    background-color: #f15f44;
+}
+</style>
+<div class="w3-container work w3-padding-64">
+<div id="work"></div>
+<div class="work-button">Work</div>
+</div>
+<!-- /work -->
+
+<!-- about me -->
+<style type="text/css">
+    .heading
+    {
+        letter-spacing: 3px;
+        font-family: 'Poiret One', cursive;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .self-image
+    {
+        text-align: center;
+    }
+    .content
+    {
+        font-size: 18px;
+        width:100%;
+    }
+    .padding_10
+    {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+</style>
+<div class="w3-container w3-padding-64 padding_10">
+    <div id="about"></div>
+    <div class="w3-container self-image w3-third">
+        <br>
+        <img src="./images/self.svg" style="width: 100%; height: auto;">
+        <br>
+    </div>
+    <div class="w3-container w3-rest">
+        <div class="w3-container heading">RISHABH RANA</div>
+        <br>
+        <div class="w3-container content"> 
+            I am a India-based UX/UI designer, amateur illustrator and clumsy code learner. 
+            <br>
+            <div style="height:10px"></div>
+            While i was graduating from my bachelor’s degree in India, I worked as a UX/UI designer for more than two years and successfully provided design services and consultation for both non-commercial projects and several start-up companies in india. I am self taught & I embarked on my journey into Full Stack Web Developing from websites like w3school.com, stackoverflow.com, github.com, codepen.io and several others.
+            <br>
+            <div style="height:10px"></div>
+            Self motivation, a strong sense of responsibility and excellent problem-solving skills come from my passion to bring delightful user experiences to life, by bridging the physical and digital worlds.
+        </div>
+    </div>
+</div>
+<!-- /about me -->
 
 <!-- skill bar chart -->
 <style type="text/css">
@@ -607,22 +680,58 @@ $('.count-bar').on('inview',function(){
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 <!-- footer -->
-<div class="w3-container footer">
-
+<style type="text/css">
+.footer
+{
+    background-color: #202020;
+    width:100%;
+    color: #eee;
+    height:auto;
+    text-align: center;
+    font-size: 20px;
+}
+.social-media
+{
+    text-align: center;
+}
+.social-media img
+{
+    max-width: 50px;
+    width:100%;
+    height:auto;
+    margin:20px;
+    cursor: pointer;
+}
+</style>
+<div class="w3-container footer w3-padding-32">
+    Email : <a href="" style="color: #fff">adern.nerk.11@gmail.com</a>
+    <br><br>
+    Social Media & Other
+    <div class="social-media">
+        <img src="./images/facebook.svg"/>
+        <img src="./images/instagram.svg"/>
+        <img src="./images/twitter.svg"/>
+        <img src="./images/whatsapp.svg"/>
+        <img src="./images/codepen.svg"/>
+        <img src="./images/github.svg"/>
+        <img src="./images/stackoverflow.svg"/>
+    </div>
+</div>
 <!-- /footer -->
+
+<!-- scroll to section -->
+<script type="text/javascript">
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 100
+    }, 500);
+});
+</script>
+<!-- /scroll to section -->
 
 <!-- animation style -->
 <style type="text/css">
