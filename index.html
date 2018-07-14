@@ -27,17 +27,176 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'> 
-
-    <!-- my style.css -->
-    <link rel="stylesheet" type="text/css" href="./style/style.css">
-    <!-- /my style.css -->
-
-    <!-- my jquery.js -->
-    <script type="text/javascript" src="./script/jquery.js"></script>
-    <!-- /my jquery.js -->
-
 </head>
+<style type="text/css">
 
+/*
+funcky cartoonist - font-family: 'Gaegu', cursive;
+*/
+@import url('https://fonts.googleapis.com/css?family=Gaegu');
+
+/*
+main sirill - font-family: 'Poiret One', cursive;
+main normal - font-family: 'Quattrocento Sans', sans-serif;
+cursive - font-family: 'Satisfy', cursive;
+plain bold headers - font-family: 'Concert One', cursive;
+*/
+@import url('https://fonts.googleapis.com/css?family=Concert+One|Poiret+One|Quattrocento+Sans|Satisfy');
+
+body
+{
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+a
+{
+    color: #fff;
+    margin:0px;
+    padding:0px;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #fff;
+}
+</style>
+
+<body>
+
+<!-- nav bar -->
+<style type="text/css">
+/*nav bar outer container*/
+.nav
+{
+    position: fixed;
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    z-index:999;
+    font-size: 25px;
+    height: 70px;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+
+}
+/*nav bar logo*/
+.nav .logo
+{
+    float:left;
+    width:80px;
+    text-align: center;
+}
+.nav .logo img
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    cursor:pointer;
+}
+/*nav on desktop*/
+.nav .big-links
+{
+    float: right;
+}
+.nav .big-links .part
+{
+    float:right;
+    text-align: center;
+    cursor: pointer;
+    margin-top:15px;
+    margin-right: 10px;
+}
+.nav .big-links .part:hover
+{
+    border-bottom: 2px solid #fff;
+    border-radius: 2px;
+}
+/*the non ghost css for nav*/
+.active-nav
+{
+    background: #202020;
+    transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+
+}
+/*toggle menu icon on mobile nav*/
+.container {
+    float: right;
+    text-align: center;
+    margin-top: 15px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+/*nav on phone*/
+.small-links .part
+{
+    width:100%;
+    text-align: center;
+    height: 60px;
+}
+
+@media screen and ( min-width: 600px ) 
+{
+.nav .small-links
+{
+    display: none;
+}
+.nav .big-links
+{
+    display: block;
+}
+.nav .small-links-opener
+{
+    display: none;
+}
+}
+@media screen and ( max-width: 600px ) 
+{
+.nav .small-links
+{
+    display: block;
+}
+.nav .big-links
+{
+    display: none;
+}
+.nav .small-links-opener
+{
+    display: block;
+}
+}
+</style>
 <div class="w3-container nav">
     <div class="w3-container">
         <div class="logo">
@@ -60,9 +219,155 @@
         <a href="#about" style="color: #fff"><div class="part" onclick="closeFunction(this)">About</div></a>
     </div>
 </div>
+<script type="text/javascript">
+//scrolling effect by adding and removing css classes
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 100) {
+        $(".nav").addClass('bounceInDown animated-fast');
+        $(".nav").addClass('active-nav');
+    }
+    else {
+        $(".nav").removeClass('bounceInDown animated-fast');
+        $(".nav").removeClass('active-nav');
+    }
+});
+
+// When the user clicks on the button, scroll to the top of the document
+$("#topFunction").click(function(){
+    window.scroll({
+        top:0,
+        left:0,
+        behavior:'smooth'
+    })
+});
+
+function closeFunction(x)
+{
+    $(".small-links-opener").removeClass("change");
+    $(".nav").css("height","70px");
+}
+
+
+//toggle open and close menu sign on mobile nav
+function myFunction(x) {
+    x.classList.toggle("change");
+    if($(".nav").css("height")=="70px")
+    {
+        $(".small-links").slideDown();
+        $(".nav").css("height","auto");
+    }
+    else
+    {
+        $(".small-links").fadeOut();
+            $(".nav").css("height","70px");
+    }
+}
+</script>
 <!-- /nav bar -->
 
 <!-- top container -->
+<style type="text/css">
+.first
+{
+    background-color: #1c222b;
+    padding:0px;
+    padding-top: 70px;
+    border-bottom: 3px solid #262626;
+    overflow: hidden;
+    margin:0px;
+}
+#homeImg {
+    position: relative;
+    width:100%;
+    max-width: 400px;
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#homeImg img:first-child
+{
+    width: 50%;
+}
+#homeImg img:last-child
+{
+    position: absolute;
+    left: 0;
+    top: 46%;
+    width: 100%;
+    padding-left:20px;
+    padding-right:20px;
+    -webkit-animation: homeImgAnimation 2s infinite;
+    animation: homeImgAnimation 2s infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+.hello
+{
+    letter-spacing: 5px;
+    font-size: 55px;
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+    font-family: 'Concert One', cursive;
+    text-align: center;
+    text-transform: uppercase;
+}
+.name
+{
+    letter-spacing: 3px;
+    font-family: 'Poiret One', cursive;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+.skill
+{
+    font-size: 20px;
+    color: grey;
+    letter-spacing: 5px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+@media screen and ( max-width: 600px ) 
+{
+.skill
+{
+    letter-spacing: 0.5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+}
+.down
+{
+    color: #fff;
+    width:50px;
+    height:50px;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.down:hover
+{
+    font-size: 45px;
+    transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+</style>
 <div class="w3-container first bounceInDown animated">
     <div class="hello w3-container">
         H·E·L·L·O
@@ -86,9 +391,84 @@
     </div>
     <br>
 </div>
+<script type="text/javascript">
+if($(document).width()<1090)
+{
+    $(".first").css("background-image","url('./images/background_try.svg')");
+    $(".first").css("background-size","100% 100%");
+    $(".first").css("background-repeat","no-repeat");
+}
+else
+{
+    $(".first").css("background-image","url('./images/background_try.svg')");
+    $(".first").css("background-size","cover");
+    $(".first").css("background-repeat","no-repeat");
+}
+</script>
 <!-- /top container -->
 
 <!-- work -->
+<style type="text/css">
+.work
+{
+    text-align: center;
+}
+.work-button
+{
+    width:130px;
+    height:40px;
+    padding-top: 5px;
+    margin: auto;
+    border-radius:50px;
+    text-align: center;
+    font-size: 22px;
+    border:2px solid #262626;
+    color: #fff;
+    background-color: #f15f44;
+}
+.big
+{
+    color:#262626;
+    font-size:22px;
+}
+.smal
+{
+    color:#C0C0C0;
+    font-size: 18px;
+}
+.li
+{
+    font-size: 18px;
+}
+.li .inactive-i
+{
+    color: #eee;
+}
+.li a
+{
+    color: #84817a;
+}
+.li a:hover
+{
+    color: #ff5252;
+}
+.linking
+{
+    width:100%;
+    max-width:300px;
+     -webkit-box-shadow: -3px 5px 6px 0px rgba(50, 50, 50, 0.1);
+  -moz-box-shadow:    -3px 5px 6px 0px rgba(50, 50, 50, 0.1);
+  box-shadow:         -3px 5px 6px 0px rgba(50, 50, 50, 0.1);
+    margin:auto;
+    margin:5px;
+}
+.linking-outer
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+</style>
 <div class="w3-container work w3-padding-64">
 <div id="work"></div>
 <div class="work-button">Work</div>
@@ -130,6 +510,84 @@
 <!-- /work -->
 
 <!-- about me -->
+<style type="text/css">
+    .heading
+    {
+        letter-spacing: 3px;
+        font-family: 'Poiret One', cursive;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .self-image
+    {
+        text-align: center;
+    }
+    .content
+    {
+        font-size: 18px;
+        width:100%;
+    }
+    .padding_10
+    {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+@media screen and ( max-width: 830px ) 
+{
+    .padding_10
+    {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+.about-button
+{
+    width:180px;
+    height:40px;
+    padding-top: 5px;
+    margin: auto;
+    border-radius:50px;
+    text-align: center;
+    font-size: 22px;
+    border:2px solid #262626;
+    color: #fff;
+    background-color: #f15f44;
+}
+@media only screen and (max-width: 641px)
+{
+    #resume_button {
+        margin-top: 24px;
+    }
+}
+#resume_button {
+    font-family: 'Montserrat', sans-serif;
+    color: #f66868;
+    border-radius: 24px;
+    border: 2px solid #f66868;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    margin-top: 20px;
+    /* background-color: #f66868; */
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(to left, white 50%, #f66868 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: all 500ms ease-out;
+    -webkit-transition: all 500ms ease-out;
+    /* box-shadow: inset 0px 0px 5px 0px #f66868; */
+}
+#resume_button:hover {
+    color: white;
+    background-position: left bottom;
+    /* box-shadow: inset 0px 0px 5px 40px #f66868; */
+}
+
+
+</style>
 <div class="w3-container w3-padding-64 padding_10">
     <div id="about"></div>
 <div class="about-button">About Me</div>
@@ -157,6 +615,91 @@
 <!-- /about me -->
 
 <!-- skill bar chart -->
+<style type="text/css">
+.skillbar-container
+{
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+}
+.skillbar
+{
+  font-family: 'Gaegu', cursive;
+  color:#fff;
+  width: 100%;
+  border: 1px solid #000;
+    height: 30px;
+  position: relative;
+    margin-bottom: 15px;
+  border-radius: 4px;
+ background: url('./images/stripe.png') repeat scroll 0 0 #e0e0e0;
+  overflow:hidden;
+}
+.symbol
+{
+  float:left;
+  width:60px;
+  text-align:center;
+  color:#fff;
+  margin-right:15px;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.color-1
+{
+background-color: #4286f4;
+}
+.color-2
+{
+background-color: tomato;
+}
+.color-3
+{
+background-color: #0074D9;
+}
+.color-4
+{
+background-color: #3D9970;
+}
+.color-5
+{
+background-color: #85144b;
+}
+.color-6
+{
+background-color: #FF851B;
+}
+.color-7
+{
+background-color: #2ECC40;
+}
+.color-8
+{
+background-color: #7FDBFF;
+}
+.color-9
+{
+background-color: #FF4136;
+}
+.count-bar
+{
+    height: 100%;
+    width: 0px;
+    position: relative;
+}
+.title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+}
+.count {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 400;
+}
+</style>
 <div class="w3-container">
     <div class="w3-half w3-center">
         <br>
@@ -164,7 +707,12 @@
         <img src="./images/skills_1.svg" style="width: 100%;height: auto;max-width: 500px;" id="skillgraph_1">
         <br>
         <br>
-
+        <script type="text/javascript">
+            if($(document).width()>600)
+            {
+                $("#skillgraph_1").hide();
+            }
+        </script>
     </div>
     <div class="w3-half">
     <div class="w3-container skillbar-container">
@@ -258,6 +806,21 @@
     </div>
     </div>
 </div>
+<script type="text/javascript">
+$('.count-bar').on('inview',function(){
+    $(document).ready(function(){
+        $('.skillbar').each(function(){
+            $(this).find('.count-bar').animate({
+                width:$(this).attr('data-percent')
+            },3000);
+        });
+    if($(document).width()>600)
+    {
+        $("#skillgraph_1").fadeIn(1500);
+    }
+    });
+});
+</script>
 
 <!-- /skill bar chart -->
 
@@ -266,6 +829,27 @@
 
 <!-- footer -->
 <style type="text/css">
+.footer
+{
+    background-color: #101010;
+    width:100%;
+    color: #eee;
+    height:auto;
+    text-align: center;
+    font-size: 20px;
+}
+.social-media
+{
+    text-align: center;
+}
+.social-media img
+{
+    max-width: 50px;
+    width:100%;
+    height:auto;
+    margin:20px;
+    cursor: pointer;
+}
 </style>
 <div class="w3-container footer w3-padding-32">
     Email : <a href="" style="color: #fff">adern.nerk.11@gmail.com</a>
@@ -283,6 +867,84 @@
 </div>
 
 <!-- /footer -->
+
+<!-- scroll to section -->
+<script type="text/javascript">
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top - 100
+    }, 500);
+});
+</script>
+<!-- /scroll to section -->
+
+<!-- animation style -->
+<style type="text/css">
+.bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+.animated-fast {
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@keyframes bounceInDown
+{
+0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+}   
+60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+}
+75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+}
+90% {
+    -webkit-transform: translate3d(0, 5px, 0)
+ ;   transform: translate3d(0, 5px, 0);
+}
+100% {
+    -webkit-transform: none;
+    transform: none;
+}
+}
+
+@keyframes homeImgAnimation
+{
+0% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(5deg);
+}
+50% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-5deg);
+}
+100% {
+    -webkit-transform: rotate(4deg);
+    transform: rotate(5deg);
+}
+}
+</style>
+<!-- /animation style -->
 
 </body>
 </html>
