@@ -47,6 +47,17 @@ body
 {
     font-family: 'Quattrocento Sans', sans-serif;
 }
+a
+{
+    color: #fff;
+    margin:0px;
+    padding:0px;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #fff;
+}
 </style>
 
 <body>
@@ -185,7 +196,6 @@ body
     display: block;
 }
 }
-
 </style>
 <div class="w3-container nav">
     <div class="w3-container">
@@ -193,7 +203,7 @@ body
             <img src="./images/drawing_3.svg" id="topFunction" onclick="closeFunction(this)">
         </div>
         <div class="big-links">
-            <div class="part" style="width: 95px;">Resume</div>
+            <a href="./content/resume.pdf" target="_blank"><div class="part" style="width: 95px;">Resume</div></a>
             <a href="#work" style="color: #fff"><div class="part" style="width: 80px;">Work</div></a>
             <a href="#about" style="color: #fff"><div class="part" style="width: 80px;">About</div></a>
         </div>
@@ -204,7 +214,7 @@ body
         </div>
     </div>
     <div class="small-links">
-        <div class="part" onclick="closeFunction(this)">Resume</div>
+        <a href="./content/resume.pdf" target="_blank"><div class="part" onclick="closeFunction(this)">Resume</div></a>
         <a href="#work" style="color: #fff"><div class="part" onclick="closeFunction(this)">Work</div></a>
         <a href="#about" style="color: #fff"><div class="part" onclick="closeFunction(this)">About</div></a>
     </div>
@@ -430,6 +440,18 @@ else
 {
     font-size: 18px;
 }
+.li .inactive-i
+{
+    color: #eee;
+}
+.li a
+{
+    color: #84817a;
+}
+.li a:hover
+{
+    color: #ff5252;
+}
 .linking
 {
     width:100%;
@@ -463,10 +485,10 @@ else
         <div class="big">Osho Madhushala</div>
         <div class="smal">Meditation Center, Narela</div>
         <div class="li">
-            <a href="https://oshomadhushala.com/" target="_blank"><i class="fa fa-link w3-margin-right" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/oshomadhushala.narela" target="_blank"><i class="fa fa-facebook w3-margin-right" aria-hidden="true"></i></a>
-            <i class="fa fa-twitter w3-margin-right" aria-hidden="true"></i>
-            <i class="fa fa-youtube-play w3-margin-right" aria-hidden="true"></i>
+            <a href="https://oshomadhushala.com/" target="_blank"><i class="fa fa-link w3-margin-right"></i></a>
+            <a href="https://www.facebook.com/oshomadhushala.narela" target="_blank"><i class="fa fa-facebook w3-margin-right"></i></a>
+            <a href="https://twitter.com/oshomadhushala" target="_blank"><i class="fa fa-twitter w3-margin-right"></i></a>
+            <i class="fa inactive-i fa-youtube-play w3-margin-right"></i>
         </div>
     </div>
 
@@ -474,10 +496,9 @@ else
         <div class="big">Personal Website</div>
         <div class="smal">Rishabh Rana, Portfolio</div>
         <div class="li">
-            <a href="https://adernnerk.github.io/portfolio" target="_blank"><i class="fa fa-link w3-margin-right" aria-hidden="true"></i></a>
-            <i class="fa fa-facebook w3-margin-right" aria-hidden="true"></i>
-            <i class="fa fa-twitter w3-margin-right" aria-hidden="true"></i>
-            <i class="fa fa-youtube-play w3-margin-right" aria-hidden="true"></i>
+            <a href="https://adernnerk.github.io/portfolio" target="_blank"><i class="fa fa-link w3-margin-right"></i></a>
+            <a href="https://facebook.com/adern.nerk" target="_blank"><i class="fa fa-facebook w3-margin-right"></i></a>
+            <a href="https://twitter.com/AdernNerk" target="_blank"><i class="fa fa-twitter w3-margin-right"></i></a>
         </div>
     </div>
 
@@ -532,6 +553,40 @@ else
     color: #fff;
     background-color: #f15f44;
 }
+@media only screen and (max-width: 641px)
+{
+    #resume_button {
+        margin-top: 24px;
+    }
+}
+#resume_button {
+    font-family: 'Montserrat', sans-serif;
+    color: #f66868;
+    border-radius: 24px;
+    border: 2px solid #f66868;
+    width: 150px;
+    height: 36px;
+    line-height: 36px;
+    margin-top: 20px;
+    /* background-color: #f66868; */
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(to left, white 50%, #f66868 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: all 500ms ease-out;
+    -webkit-transition: all 500ms ease-out;
+    /* box-shadow: inset 0px 0px 5px 0px #f66868; */
+}
+#resume_button:hover {
+    color: white;
+    background-position: left bottom;
+    /* box-shadow: inset 0px 0px 5px 40px #f66868; */
+}
+
+
 </style>
 <div class="w3-container w3-padding-64 padding_10">
     <div id="about"></div>
@@ -539,7 +594,8 @@ else
 <br><br>
     <div class="w3-container self-image w3-third">
         <br>
-        <img src="./images/self.svg" style="width: 100%; height: auto;">
+        <img src="./images/self.svg" style="width: 100%; height: auto;"><br>
+        <a id="resume_button" href="./content/resume.pdf">RESUME PDF</a>
         <br>
     </div>
     <div class="w3-container w3-rest">
@@ -801,10 +857,10 @@ $('.count-bar').on('inview',function(){
     Social Media & Other
     <div class="social-media">
         <a href="https://www.facebook.com/adern.nerk" target="_blank"><img src="./images/facebook.svg"/></a>
-        <a href="https://www.instagram.com/adern_nerk/"><img src="./images/instagram.svg"/></a>
-        <a href="https://twitter.com/AdernNerk"><img src="./images/twitter.svg"/></a>
+        <a href="https://www.instagram.com/adern_nerk/" target="_blank"><img src="./images/instagram.svg"/></a>
+        <a href="https://twitter.com/AdernNerk" target="_blank"><img src="./images/twitter.svg"/></a>
         <img src="./images/whatsapp.svg"/>
-        <img src="./images/codepen.svg"/>
+        <a href="https://codepen.io/Adern_Nerk/" target="_blank"><img src="./images/codepen.svg"/></a>
         <a href="http://github.com/AdernNerk" target="_blank"><img src="./images/github.svg"/></a>
         <a href="https://stackoverflow.com/users/6770417/adern-nerk" target="_blank"><img src="./images/stackoverflow.svg"/></a>
     </div>
