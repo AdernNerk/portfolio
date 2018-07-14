@@ -28,9 +28,14 @@
 
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'> 
 
-    <!-- style.css -->
+    <!-- my style.css -->
     <link rel="stylesheet" type="text/css" href="./style/style.css">
-    <!-- /style.css -->
+    <!-- /my style.css -->
+
+    <!-- my jquery.js -->
+    <script type="text/javascript" src="./script/jquery.js"></script>
+    <!-- /my jquery.js -->
+
 </head>
 
 <div class="w3-container nav">
@@ -55,50 +60,6 @@
         <a href="#about" style="color: #fff"><div class="part" onclick="closeFunction(this)">About</div></a>
     </div>
 </div>
-<script type="text/javascript">
-//scrolling effect by adding and removing css classes
-$(window).scroll(function () {
-    if ($(window).scrollTop() > 100) {
-        $(".nav").addClass('bounceInDown animated-fast');
-        $(".nav").addClass('active-nav');
-    }
-    else {
-        $(".nav").removeClass('bounceInDown animated-fast');
-        $(".nav").removeClass('active-nav');
-    }
-});
-
-// When the user clicks on the button, scroll to the top of the document
-$("#topFunction").click(function(){
-    window.scroll({
-        top:0,
-        left:0,
-        behavior:'smooth'
-    })
-});
-
-function closeFunction(x)
-{
-    $(".small-links-opener").removeClass("change");
-    $(".nav").css("height","70px");
-}
-
-
-//toggle open and close menu sign on mobile nav
-function myFunction(x) {
-    x.classList.toggle("change");
-    if($(".nav").css("height")=="70px")
-    {
-        $(".small-links").slideDown();
-        $(".nav").css("height","auto");
-    }
-    else
-    {
-        $(".small-links").fadeOut();
-            $(".nav").css("height","70px");
-    }
-}
-</script>
 <!-- /nav bar -->
 
 <!-- top container -->
@@ -125,20 +86,6 @@ function myFunction(x) {
     </div>
     <br>
 </div>
-<script type="text/javascript">
-if($(document).width()<1090)
-{
-    $(".first").css("background-image","url('./images/background_try.svg')");
-    $(".first").css("background-size","100% 100%");
-    $(".first").css("background-repeat","no-repeat");
-}
-else
-{
-    $(".first").css("background-image","url('./images/background_try.svg')");
-    $(".first").css("background-size","cover");
-    $(".first").css("background-repeat","no-repeat");
-}
-</script>
 <!-- /top container -->
 
 <!-- work -->
@@ -217,12 +164,7 @@ else
         <img src="./images/skills_1.svg" style="width: 100%;height: auto;max-width: 500px;" id="skillgraph_1">
         <br>
         <br>
-        <script type="text/javascript">
-            if($(document).width()>600)
-            {
-                $("#skillgraph_1").hide();
-            }
-        </script>
+
     </div>
     <div class="w3-half">
     <div class="w3-container skillbar-container">
@@ -316,21 +258,6 @@ else
     </div>
     </div>
 </div>
-<script type="text/javascript">
-$('.count-bar').on('inview',function(){
-    $(document).ready(function(){
-        $('.skillbar').each(function(){
-            $(this).find('.count-bar').animate({
-                width:$(this).attr('data-percent')
-            },3000);
-        });
-    if($(document).width()>600)
-    {
-        $("#skillgraph_1").fadeIn(1500);
-    }
-    });
-});
-</script>
 
 <!-- /skill bar chart -->
 
@@ -356,19 +283,6 @@ $('.count-bar').on('inview',function(){
 </div>
 
 <!-- /footer -->
-
-<!-- scroll to section -->
-<script type="text/javascript">
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top - 100
-    }, 500);
-});
-</script>
-<!-- /scroll to section -->
-
 
 </body>
 </html>
